@@ -5,12 +5,13 @@
 int main()
 {
 	int i;
-	unsigned int a =0xABCDEFFF;
-	unsigned int b=0xF0000000;
-	unsigned int q=0xFFAAFFFF;
+	unsigned int a =0xABCDEFFF; //numbers for output task1
+	unsigned int b=0xF0000000;  //number for logical mult task1
+	unsigned int q=0xFFAAFFFF; //numbers for output task2
+	unsigned int w=0xFF00FFFF; //numbers for logical mult task2
 	unsigned int c;
-	unsigned int w=0xFF00FFFF;
-
+	
+	//task1
 	for(i=0;i<8;i++)
 	{
 		c = a & b;
@@ -18,12 +19,11 @@ int main()
 		a= a << 4;
 		c=0;
 	}
-	i=0;
-
-	printf("\n\n");
-	printf("%X \n", q);
-	printf("\n\n");
+	
+	//task2
+	printf("\n%X \n", q);
 	q= q&w;
+	q= q | 0x00BB0000;
 	printf("%X \n", q);
 
 	return 0;
